@@ -37,7 +37,7 @@ function App() {
     <aside className="lateral">
       <Buscador/>
 
-       <Crear setListadoState={setListadoState} />
+       <Crear listadoState={listadoState} setListadoState={setListadoState} />
     </aside>
 
     <footer className="footer">

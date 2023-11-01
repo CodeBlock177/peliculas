@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { GuardarEnStorage } from '../helpers/GuardarEnStorage';
 
-export const Crear = ({setListadoState}) => {
+export const Crear = ({listadoState, setListadoState}) => {
     const tituloComponente = "Añadir pelicula";
 
     const [peliState, setPeliState] = useState({
@@ -20,7 +20,7 @@ export const Crear = ({setListadoState}) => {
         let target = e.target;
         let titulo = target.titulo.value;
         let descripcion = target.descripcion.value;
-
+ 
         let peli = 
         {
             id: new Date().getTime(),
@@ -30,11 +30,16 @@ export const Crear = ({setListadoState}) => {
 
         setPeliState(peli);
 
-        setListadoState(elementos =>
+        if(listadoState != null)
         {
-            return [...elementos, peli];
-        });
-
+            setListadoState(elementos =>
+                {
+                    return [...elementos, peli];
+                });
+        }else{
+            setListadoState(peli);
+        }
+        
         GuardarEnStorage("pelis", peli);
     }
 

@@ -14,12 +14,12 @@ export const Listado = ({listadoState, setListadoState}) => {
     {
         let peliculas = JSON.parse(localStorage.getItem("pelis"));
 
-        setListadoState(peliculas);
+        peliculas === null ? setListadoState([]) : setListadoState(peliculas);
     }
 
   return (
     <>
-    {listadoState != null && listadoState.map(peli => {
+    {listadoState != null ? listadoState.map(peli => {
         return (
             <article key={peli.id} className="peli-item">
             <h3 className="title">{peli.titulo}</h3>
@@ -31,6 +31,7 @@ export const Listado = ({listadoState, setListadoState}) => {
         </article>
         )
     })
+    : <h2 className='aviso'>Listado vacio sapo hijo de puta</h2>
 }
     
     </>

@@ -1,6 +1,6 @@
 export const GuardarEnStorage = (clave, elemento) =>
     {
-        let elementos = JSON.parse(localStorage.getItem("clave"));
+        let elementos = JSON.parse(localStorage.getItem(clave));
 
         if(Array.isArray(elementos))
         {
@@ -9,7 +9,7 @@ export const GuardarEnStorage = (clave, elemento) =>
             elementos = [elemento];
         }
 
-        localStorage.setItem("clave", JSON.stringify(elementos));
+        localStorage.setItem(clave, JSON.stringify(elementos));
 
         return elemento;
     }
