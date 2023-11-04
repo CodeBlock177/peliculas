@@ -28,6 +28,8 @@ export const Crear = ({listadoState, setListadoState}) => {
             descripcion
         };
 
+        console.log(peli);
+
         setPeliState(peli);
 
         if(listadoState != null)
@@ -46,6 +48,7 @@ export const Crear = ({listadoState, setListadoState}) => {
 
   return (
     <div className="add">
+
         <h3 className="title">{tituloComponente}</h3>
 
         <strong>

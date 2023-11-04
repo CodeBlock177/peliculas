@@ -118,7 +118,7 @@ body{
 }
 
 button,
-input[type="submit"]
+input[type="submit"],
 input[type="button"]
 {
   width: 100px;
@@ -170,8 +170,9 @@ input[type="button"]
 }
 
 .lateral input[type="text"],
-.lateral input[type="text"],
-.lateral textarea{
+.edit_form input[type="text"],
+.lateral textarea,
+.edit_form textarea{
   display: block;
   margin: 0 auto;
   margin-top: 15px;
